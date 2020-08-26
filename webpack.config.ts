@@ -30,10 +30,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+    extensions: ['.ts', '.js'],
   },
   output: {
-    publicPath: 'public',
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },

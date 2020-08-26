@@ -1,11 +1,12 @@
-import './landing-page.scss';
+import Component from '../../decorators/component';
 
-export class LandingPage {
-  constructor(body: HTMLElement) {
-    this.render(body);
-  }
-
-  render(body: HTMLElement): void {
-    body.innerHTML += require('./landing-page.html');
+@Component({
+  selector: 'landing-page',
+  templateUrl: 'landing-page/landing-page.html',
+  style: 'landing-page/landing-page.scss',
+})
+export class LandingPage extends HTMLElement {
+  constructor() {
+    super();
   }
 }

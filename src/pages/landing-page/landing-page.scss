@@ -1,4 +1,6 @@
+@import 'scss/variables.scss';
+
 .landing {
   background-color: black;
-  color: red;
+  color: $primary;
 }
