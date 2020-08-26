@@ -26,6 +26,11 @@ module.exports = {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
         include: [path.resolve(__dirname, 'src')]
+      },
+      {
+        test: /\.svg$/,
+        use: ['svg-inline-loader'],
+        include: [path.resolve(__dirname, 'src')]
       }
     ]
   },
