@@ -21,7 +21,6 @@ export class AssinaturasSection extends HTMLElement {
     getAssinaturas()
       .on('value', (snapshot: any) => {
         this.assinaturas = snapshot.val();
-        debugger;
         this.assinaturas.forEach((assinatura) => {
           this.getElementsByClassName('section--assinaturas')[0].appendChild(new AssinaturaComponent(assinatura))
         });
