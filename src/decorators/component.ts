@@ -5,10 +5,18 @@ const Component = (config: CustomComponent) => (cls: CustomElementConstructor): 
 
   const template = document.createElement('template');
   if (config.style) {
-    require(`pages/${config.style}`);
+    if (config.folder === 'components') {
+      require(`components/${config.style}`);
+    } else {
+      require(`pages/${config.style}`);
+    }
   }
 
-  template.innerHTML += require(`pages/${config.templateUrl}`);
+  if (config.folder === 'components') {
+    template.innerHTML += require(`components/${config.templateUrl}`);
+  } else {
+    template.innerHTML += require(`pages/${config.templateUrl}`);
+  }
 
   cls.prototype.connectedCallback = function() {
     const clone = document.importNode(template.content, true);
@@ -23,6 +31,7 @@ const Component = (config: CustomComponent) => (cls: CustomElementConstructor): 
     }
 
     if (this.componentDidMount) {
+      fillElements(this, this.props)
       this.componentDidMount();
     }
   };
@@ -38,6 +47,17 @@ const Component = (config: CustomComponent) => (cls: CustomElementConstructor): 
   }
   window.customElements.define(config.selector, cls);
 };
+
+const fillElements = (element: HTMLElement, props: any) => {
+  if (props && Object.keys(props).length) {
+    const properties = Object.keys(props);
+    element.querySelectorAll('[data]').forEach((element: any) => {
+      if (props[element.getAttribute('data')]) {
+        element.textContent = props[element.getAttribute('data')];
+      }
+    });
+  }
+}
 
 const validateConfig = (config: CustomComponent) => {
   if (config.selector.indexOf('-') < 1) {

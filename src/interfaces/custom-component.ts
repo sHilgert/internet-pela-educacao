@@ -3,4 +3,5 @@ export interface CustomComponent {
   templateUrl: string;
   style?: string;
   useShadow?: boolean;
+  folder?: string;
 }
