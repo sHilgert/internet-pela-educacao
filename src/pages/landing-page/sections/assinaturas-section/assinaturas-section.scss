@@ -2,8 +2,11 @@
 
 .assinaturas {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  margin-left: -$space-m;
+  margin-right: -$space-m;
+  width: 100%;
 }
 
 .assinaturas__assinadores__title {
@@ -14,4 +17,41 @@
   display: block;
   max-height: 400px;
   overflow: auto;
+  width: 100%;
+}
+
+.assinaturas__assinadores {
+  margin-right: $space-xxl;
+  flex: 1;
+  max-width: 400px;
+}
+
+.assinaturas__total {
+  margin-left: $space-xxl;
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.assinaturas__total__number {
+  margin-top: $space-xl;
+  font-size: $size-j;
+  line-height: calc(#{$size-l} + #{$size-s});
+  vertical-align: middle;
+}
+
+@media (max-width: $screen-xs-max) {
+  .assinaturas {
+    flex-direction: column;
+  }
+
+  .assinaturas__assinadores {
+    margin-bottom: $space-xxl;
+  }
+
+  .assinaturas__total, .assinaturas__assinadores {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

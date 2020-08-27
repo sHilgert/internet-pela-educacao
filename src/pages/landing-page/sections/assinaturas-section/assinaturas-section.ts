@@ -1,6 +1,6 @@
 import Component from 'decorators/component';
 import { AssinaturaComponent } from 'components/assinatura/assinatura';
-import { getAssinaturas } from 'services/firebase';
+import { getAssinaturas, getTotalAssinaturas } from 'services/firebase';
 
 @Component({
   selector: 'assinaturas-section',
@@ -17,43 +17,20 @@ export class AssinaturasSection extends HTMLElement {
     this.startObserverAssinaturas();
   }
 
+  getTotalAssinaturas() {
+    getTotalAssinaturas()
+      .then((total: Number) => {
+        this.getElementsByClassName('assinaturas__total__number')[0].textContent = total.toString();
+      });
+  }
+
   startObserverAssinaturas() {
     getAssinaturas()
       .on('value', (snapshot: any) => {
+        this.getTotalAssinaturas();
         this.assinaturas = snapshot.val();
         this.assinaturas.forEach((assinatura) => {
           new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );
-          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
-            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
-          );          new AssinaturaComponent(
             <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
             assinatura
           );
