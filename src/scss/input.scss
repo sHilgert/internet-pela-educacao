@@ -1,0 +1,30 @@
+.input-field {
+  color: var(--color-neutral-black);
+  display: block;
+  font-size: rem(13);
+  font-weight: $font-weight-bold;
+  letter-spacing: rem(0.5);
+  line-height: rem(20);
+  margin-bottom: $space-m;
+  position: relative;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-desktop) {
+    margin-bottom: $space-st;
+  }
+}
+
+.input-field__input {
+  background-color: white;
+  border-radius: $border-radius;
+  border: 1px solid $dark-gray;
+  color: $dark-gray;
+  display: block;
+  font-size: rem(16);
+  font-weight: $font-weight-normal;
+  height: 48px;
+  line-height: rem(24);
+  outline: none;
+  padding: 0 $space-m;
+  width: 100%;
+}
