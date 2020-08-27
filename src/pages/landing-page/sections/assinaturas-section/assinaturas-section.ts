@@ -22,7 +22,41 @@ export class AssinaturasSection extends HTMLElement {
       .on('value', (snapshot: any) => {
         this.assinaturas = snapshot.val();
         this.assinaturas.forEach((assinatura) => {
-          this.getElementsByClassName('section--assinaturas')[0].appendChild(new AssinaturaComponent(assinatura))
+          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );
+          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );          new AssinaturaComponent(
+            <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
+            assinatura
+          );
         });
       });
   };

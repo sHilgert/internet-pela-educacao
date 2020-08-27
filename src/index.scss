@@ -1,8 +1,11 @@
 @import 'scss/variables.scss';
 @import url(https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap);
+@import 'scss/title.scss';
+@import 'scss/btn.scss';
+@import 'scss/text.scss';
+@import 'scss/table.scss';
 
 // fonts
-$font-family: "Red Hat Text", sans-serif;
 $font-weight-light: 400;
 $font-weight-regular: 500;
 $font-weight-heavy: 700;
@@ -25,6 +28,9 @@ body {
   font-family: $font-family;
   color: $dark-gray;
   line-height: $font-height;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
 }
 
 // typography
@@ -180,4 +186,14 @@ $breakpoint-large: 60em; // 960px
   .hidden-sm {
     display: block;
   }
+}
+
+
+.section {
+  display: flex;
+  width: 100%;
+  padding: $space-xl $space-m;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

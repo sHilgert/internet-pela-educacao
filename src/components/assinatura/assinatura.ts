@@ -1,30 +1,16 @@
-import Component from 'decorators/component';
-import { Assinatura } from 'interfaces/assinatura';
+export class AssinaturaComponent {
+  assinatura: any;
 
-@Component({
-  selector: 'assinaturas-component',
-  templateUrl: 'assinatura/assinatura.html',
-  style: 'assinatura/assinatura.scss',
-  folder: 'components'
-})
-export class AssinaturaComponent extends HTMLElement {
-  props = {};
-  constructor(public assinatura: Assinatura) {
-    super();
-    console.log(assinatura);
-    this.props = assinatura;
-    this.render();
+  constructor(container: HTMLTableRowElement, assinatura: any) {
+    this.assinatura = assinatura;
+    this.render(container);
   }
 
-  getProps() {
-   return this.props;
-  }
-
-  componentWillMount() {
-  }
-  componentDidMount() {
-  }
-
-  render() {
+  render(container: HTMLElement) {
+    let assinaturaHtml = require('./assinatura.html');
+    Object.keys(this.assinatura).forEach(property => {
+      assinaturaHtml = assinaturaHtml.replace(`{{ ${property } }}`, this.assinatura[property])
+    });
+    container.innerHTML += assinaturaHtml;
   }
 }

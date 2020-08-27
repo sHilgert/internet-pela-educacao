@@ -1,6 +1,17 @@
 @import 'scss/variables.scss';
 
-.landing {
-  background-color: black;
-  color: $primary;
+.assinaturas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.assinaturas__assinadores__title {
+  margin-bottom: $space-l;
+}
+
+.assinaturas__assinadores__lista {
+  display: block;
+  max-height: 400px;
+  overflow: auto;
 }
