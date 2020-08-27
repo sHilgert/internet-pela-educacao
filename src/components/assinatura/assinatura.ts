@@ -8,8 +8,8 @@ export class AssinaturaComponent {
 
   render(container: HTMLElement) {
     let assinaturaHtml = require('./assinatura.html');
-    Object.keys(this.assinatura).forEach(property => {
-      assinaturaHtml = assinaturaHtml.replace(`{{ ${property } }}`, this.assinatura[property])
+    ['nome', 'data', 'profissao'].forEach(property => {
+      assinaturaHtml = assinaturaHtml.replace(`{{ ${property } }}`, this.assinatura[property] || '-')
     });
     container.innerHTML += assinaturaHtml;
   }
