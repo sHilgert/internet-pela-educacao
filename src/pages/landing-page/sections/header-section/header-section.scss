@@ -1,0 +1,25 @@
+@import 'scss/variables.scss';
+
+.header-wrapper {
+    overflow: hidden;
+    padding: 5em 0em;
+    background: $blue000;
+}
+
+
+.topnav {
+    padding: 8px;
+    background-color: #fff;
+}
+
+.logo-big {
+    @media only screen and (max-width: 540px) {
+        display: none;
+    }
+}
+
+.logo-small {
+    @media only screen and (min-width: 540px) {
+        display: none;
+    }
+}

@@ -28,8 +28,8 @@ module.exports = {
         include: [path.resolve(__dirname, 'src')]
       },
       {
-        test: /\.svg$/,
-        use: ['svg-inline-loader'],
+        test: /\.(png|jpe?g|gif)$/i,
+        use: ['file-loader'],
         include: [path.resolve(__dirname, 'src')]
       }
     ]
