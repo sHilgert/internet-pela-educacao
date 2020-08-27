@@ -3,6 +3,7 @@ import { DepoimentoSection } from './sections/depoimentos-section/depoimentos-se
 import { AssinaturasSection } from './sections/assinaturas-section/assinaturas-section';
 import { HeaderSection } from './sections/header-section/header-section';
 import { FooterSection } from './sections/footer-section/footer-section';
+import { DescriptionSection } from './sections/description-section/description-section';
 
 @Component({
   selector: 'landing-page',
@@ -13,6 +14,7 @@ export class LandingPage extends HTMLElement {
   constructor() {
     super();
 
+    new DescriptionSection();
     new HeaderSection();
     new DepoimentoSection();
     new AssinaturasSection();

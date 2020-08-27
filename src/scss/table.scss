@@ -8,9 +8,10 @@
   border-spacing: 0px;
   th,
   td {
-    padding: $space-s;
+    padding: $space-s $space-m;
     vertical-align: top;
     border-top: $border-width-small solid $dark-gray;
+    width: 100%;
   }
 
   thead th {
