@@ -14,7 +14,4 @@ export class LandingPage extends HTMLElement {
     new DepoimentoSection();
     new AssinaturasSection();
   }
-
-  componentWillMount() {
-  }
 }

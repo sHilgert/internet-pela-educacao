@@ -1,0 +1,50 @@
+@import 'scss/variables.scss';
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $space-xs;
+  background-color: $blue000;
+  border-spacing: 0px;
+  th,
+  td {
+    padding: $space-s;
+    vertical-align: top;
+    border-top: $border-width-small solid $dark-gray;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $border-width-small) solid $dark-gray;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $border-width-small) solid $dark-gray;
+  }
+
+  .table {
+    background-color: $blue000;
+  }
+}
+
+.table-bordered {
+  border: $border-width-small solid $dark-gray;
+
+  th,
+  td {
+    border: $border-width-small solid $dark-gray;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: (2 * $border-width-small);
+    }
+  }
+}
+
+.table-hover {
+  tbody tr:hover {
+    background-color: $blue400;
+  }
+}

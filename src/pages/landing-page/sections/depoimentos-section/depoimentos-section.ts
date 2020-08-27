@@ -19,7 +19,7 @@ export class DepoimentoSection extends HTMLElement {
         this.depoimentos = value;
         this.depoimentos.forEach((depoimento) => {
           depoimento['nome'] = depoimento['usuario']['nome'];
-          this.getElementsByClassName('section--depoimentos')[0].appendChild(new DepoimentoComponent(depoimento))
+          this.getElementsByClassName('section__depoimentos')[0].appendChild(new DepoimentoComponent(depoimento))
         });
       });
   }

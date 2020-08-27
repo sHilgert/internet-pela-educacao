@@ -13,18 +13,7 @@ export class DepoimentoComponent extends HTMLElement {
   constructor(public depoimento: Depoimento) {
     super();
     this.props = depoimento;
-    this.render();
   }
 
-  getProps() {
-   return this.props;
-  }
-
-  componentWillMount() {
-  }
-  componentDidMount() {
-  }
-
-  render() {
-  }
+  componentDidMount() {}
 }
