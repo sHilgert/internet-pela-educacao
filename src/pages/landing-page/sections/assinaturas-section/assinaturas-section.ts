@@ -30,10 +30,10 @@ export class AssinaturasSection extends HTMLElement {
         this.getTotalAssinaturas();
         this.assinaturas = snapshot.val();
         this.getElementsByClassName('assinaturas__assinadores__lista-item')[0].innerHTML = '';
-        this.assinaturas.forEach((assinatura) => {
+        Object.keys(this.assinaturas).forEach((key: any) => {
           new AssinaturaComponent(
             <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
-            assinatura
+            this.assinaturas[key]
           );
         });
       });

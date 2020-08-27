@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -47,5 +48,8 @@ module.exports = {
       title: 'Internet pela Educação - Um movimento pelo acesso ilimitado a conteúdos de educação',
       template: './src/index.html',
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
 }
