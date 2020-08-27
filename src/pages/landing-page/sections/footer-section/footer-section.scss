@@ -1,0 +1,16 @@
+@import 'scss/variables.scss';
+
+.footer-wrapper {
+  overflow: hidden;
+  background: $blue400;
+  display: block;
+  justify-content: center;
+}
+
+img {
+  padding-top: 8px;
+}
+
+p {
+  color: #fff;
+}
