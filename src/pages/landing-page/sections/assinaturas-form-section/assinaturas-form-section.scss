@@ -1,0 +1,14 @@
+@import 'scss/variables.scss';
+
+.assinaturas-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: $screen-xs-max) {
+  .assinaturas-form {
+    flex-direction: column;
+  }
+}
