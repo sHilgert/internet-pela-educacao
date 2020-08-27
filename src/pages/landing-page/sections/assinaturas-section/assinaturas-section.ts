@@ -29,6 +29,7 @@ export class AssinaturasSection extends HTMLElement {
       .on('value', (snapshot: any) => {
         this.getTotalAssinaturas();
         this.assinaturas = snapshot.val();
+        this.getElementsByClassName('assinaturas__assinadores__lista-item')[0].innerHTML = '';
         this.assinaturas.forEach((assinatura) => {
           new AssinaturaComponent(
             <HTMLTableRowElement>this.getElementsByClassName('assinaturas__assinadores__lista-item')[0],
