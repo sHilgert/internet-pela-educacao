@@ -1,11 +1,17 @@
 @import 'scss/variables.scss';
 
-.header-wrapper {
-    overflow: hidden;
-    padding: 5em 0em;
-    background: $blue000;
+.header {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
 }
-
+.header-wrapper {
+  padding: $space-xxl 0;
+  margin-left: -$space-m;
+  margin-right: -$space-m;
+  background: $blue000;
+}
 
 .topnav {
     padding: 8px;
